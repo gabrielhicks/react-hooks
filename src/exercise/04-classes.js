@@ -10,7 +10,7 @@ import * as React from 'react'
 // 🦉 You've learned all the hooks you need to know to refactor this Board
 // component to hooks. So, let's make it happen!
 
-class Board extends React.Component {
+const Board extends React.Component {
   state = {
     squares:
       JSON.parse(window.localStorage.getItem('squares')) || Array(9).fill(null),
