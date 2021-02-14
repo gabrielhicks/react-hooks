@@ -8,24 +8,24 @@ import VanillaTilt from 'vanilla-tilt'
 // If you'd rather practice refactoring a class component to a function
 // component with hooks, then go ahead and do this exercise.
 
-const Tilt = () => {
-  // tiltRef = React.createRef()
+const Tilt = props => {
+  const tiltRef = React.createRef()
   // componentDidMount() {
-  //   const tiltNode = this.tiltRef.current
-  //   const vanillaTiltOptions = {
-  //     max: 25,
-  //     speed: 400,
-  //     glare: true,
-  //     'max-glare': 0.5,
-  //   }
-  //   VanillaTilt.init(tiltNode, vanillaTiltOptions)
+  const tiltNode = tiltRef.current
+  const vanillaTiltOptions = {
+    max: 25,
+    speed: 400,
+    glare: true,
+    'max-glare': 0.5,
+  }
+  VanillaTilt.init(tiltNode, vanillaTiltOptions)
   // }
   // componentWillUnmount() {
   //   this.tiltRef.current.vanillaTilt.destroy()
   // }
   return (
-    <div ref={this.tiltRef} className="tilt-root">
-      <div className="tilt-child">{this.props.children}</div>
+    <div ref={tiltRef} className="tilt-root">
+      <div className="tilt-child">{props.children}</div>
     </div>
   )
 }
