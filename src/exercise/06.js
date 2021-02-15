@@ -34,20 +34,19 @@ function PokemonInfo({pokemonName}) {
       })
   }, [pokemonName])
 
-  if (status === 'rejected') {
+  if (status === 'idle') {
+    return 'Submit a Pokemon'
+  } else if (status === 'pending') {
+    return <PokemonInfoFallback name={pokemonName} />
+  } else if (status === 'resolved') {
+    return <PokemonDataView pokemon={pokemon} />
+  } else if (status === 'rejected') {
     return (
       <div role="alert">
         There was an error:
         <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
       </div>
     )
-  } else if (status === 'idle') {
-    return 'Submit a Pokemon'
-  } else if (status === 'pending') {
-    return <PokemonInfoFallback name={pokemonName} />
-  } else if (status === 'resolved') {
-    return <PokemonDataView pokemon={pokemon} />
-  }
 }
 
 function App() {
