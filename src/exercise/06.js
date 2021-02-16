@@ -47,6 +47,7 @@ function PokemonInfo({pokemonName}) {
         <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
       </div>
     )
+  }
 }
 
 function App() {
