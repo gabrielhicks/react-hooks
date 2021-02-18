@@ -16,7 +16,7 @@ const Tilt = props => {
     max: 25,
     speed: 400,
     glare: true,
-    'max-glare': 0.5,
+    'max-glare': 0.67,
   }
   VanillaTilt.init(tiltNode, vanillaTiltOptions)
   // }
